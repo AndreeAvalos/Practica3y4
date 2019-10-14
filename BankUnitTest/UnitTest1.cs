@@ -26,7 +26,7 @@ namespace Tests
                 Assert.Fail();
             }
             Usuario u = UsuariosHelpers.existeUsuario(usuario, pass);
-            if(u != null)
+            if (u != null)
             {
                 Assert.Pass();
             }
@@ -34,6 +34,32 @@ namespace Tests
             {
                 Assert.Fail();
             }
+        }
+
+        [Test]
+        public void TestTransferencia()
+        {
+            int ClienteRecibe = 206000000, ClienteDa = 206000, ClienteFake = 8000001;
+            double saldoPasa = 1000, saldoNoPasa = 1001;
+            string passCorrect = "12345", passFake = "54321";
+            //test que deberian tirar false
+            Respuesta test1_respuesta = TransferenciaHelper.set_Transferencia(ClienteFake, ClienteDa, saldoPasa, passCorrect);
+            Respuesta test2_respuesta = TransferenciaHelper.set_Transferencia(ClienteRecibe, ClienteFake, saldoPasa, passCorrect);
+            Respuesta test3_respuesta = TransferenciaHelper.set_Transferencia(ClienteRecibe, ClienteDa, saldoPasa, passFake);
+            Respuesta test4_respuesta = TransferenciaHelper.set_Transferencia(ClienteRecibe, ClienteDa, saldoNoPasa, passCorrect);
+            //prueba que deberia recibir un true de respuesta
+            Respuesta test5_respuesta = TransferenciaHelper.set_Transferencia(ClienteRecibe, ClienteDa, saldoPasa, passCorrect);
+            
+            if (test1_respuesta.Estado == false) Assert.Pass();
+            else Assert.Fail();
+            if (test2_respuesta.Estado == false) Assert.Pass();
+            else Assert.Fail();
+            if (test3_respuesta.Estado == false) Assert.Pass();
+            else Assert.Fail();
+            if (test4_respuesta.Estado == false) Assert.Pass();
+            else Assert.Fail();
+            if (test5_respuesta.Estado == true) Assert.Pass();
+            else Assert.Fail();
         }
     }
 }
