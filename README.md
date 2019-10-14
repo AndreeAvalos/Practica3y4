@@ -1,7 +1,6 @@
 # Practica 3 y 4
 Analisis y diseño 1, Practica 3 y 4, Grupo 6
-# CQL - Teacher
-Proyecto 1 de Organizacion de Lenguajes y Compiladores 2
+
 ### 📋
 
 * Universidad de San Carlos de Guatemala
