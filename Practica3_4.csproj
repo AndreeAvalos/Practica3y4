@@ -130,6 +130,7 @@
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Images\fondoLogin.png" />
     <Content Include="Login.aspx" />
+    <Content Include="RegistroUser.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -204,6 +205,14 @@
     <Compile Include="Models\Respuesta.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistroUser.aspx.cs">
+      <DependentUpon>RegistroUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistroUser.aspx.designer.cs">
+      <DependentUpon>RegistroUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registrousuarios.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

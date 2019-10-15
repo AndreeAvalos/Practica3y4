@@ -2,6 +2,18 @@ using NUnit.Framework;
 using Practica3_4.Helpers;
 using Practica3_4.Models;
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+using Newtonsoft.Json;
+using System.IO;
+using System.Net;
+using System.Text;
+
+
+
 namespace Tests
 {
     public class Tests
@@ -61,5 +73,21 @@ namespace Tests
             if (test5_respuesta.Estado == true) Assert.Pass();
             else Assert.Fail();
         }
+
+
+
+        [Test]
+        public void testTransferencia() {
+
+            String Nombre = "Fernando";
+            String Apellido = "Paz";
+            Int64 dpi =2679783400101;
+            int Cuenta = 002;
+            double saldo = 100.0;
+            String mail = "fernandopaz@gmail.com";
+            String Pass = "1223";
+
+        }
+
     }
 }
