@@ -24,6 +24,7 @@ namespace Practica3_4.Helpers
                         //Si tiene fondos suficientes, entonces debitamos y cerramos la transaccion
                         // con un resultado exitoso.
                         set_Saldo(Cuenta_Recibe, monto_debitar);
+                        restar_Saldo(Cuenta_Da, monto_debitar);
                         return new Respuesta("Transaccion realizada con exito.", true);
                     }
                     return new Respuesta("No tiene suficientes para realizar la transaccion", false);
@@ -64,6 +65,14 @@ namespace Practica3_4.Helpers
             foreach (Usuario item in cargarData.users)
             {
                 if (item.Cuenta == num_cuenta) item.Saldo += saldo;
+            }
+        }
+
+        private static void restar_Saldo(int num_cuenta, double saldo)
+        {
+            foreach (Usuario item in cargarData.users)
+            {
+                if (item.Cuenta == num_cuenta) item.Saldo -= saldo;
             }
         }
     }
