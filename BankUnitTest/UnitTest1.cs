@@ -82,10 +82,46 @@ namespace Tests
             String Nombre = "Fernando";
             String Apellido = "Paz";
             Int64 dpi =2679783400101;
-            int Cuenta = 002;
-            double saldo = 100.0;
+
             String mail = "fernandopaz@gmail.com";
             String Pass = "1223";
+
+
+            String cui = dpi.ToString();
+            int tamanoDPI = cui.Length;
+
+            String Cuenta = "002";
+
+
+            bool resultCuenta;
+            
+            resultCuenta = Cuenta.All(Char.IsDigit);
+
+            if (string.IsNullOrEmpty(Nombre))
+            {
+                Assert.Fail();
+            }
+            else if (string.IsNullOrEmpty(Apellido))
+            {
+                Assert.Fail();
+            }
+            else if (string.IsNullOrEmpty(mail))
+            {
+                Assert.Fail();
+            }
+            else if (string.IsNullOrEmpty(Pass))
+            {
+                Assert.Fail();
+            }
+            else if (tamanoDPI < 0 && tamanoDPI > 14 )
+            {
+                Assert.Fail();
+            }
+            else if (resultCuenta == false)
+            {
+                Assert.Fail();
+            }
+
 
         }
 
