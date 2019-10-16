@@ -107,6 +107,7 @@ namespace Tests
                 }
             }
         }
+        [Test]
         public void TestRegistrarUsuario()
         {
 
