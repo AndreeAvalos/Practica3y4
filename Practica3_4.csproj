@@ -170,6 +170,7 @@
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Images\fondoLogin.png" />
     <Content Include="Login.aspx" />
+    <Content Include="PerfilUsuario.aspx" />
     <Content Include="Saldo.aspx" />
     <Content Include="RegistroUser.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -253,6 +254,13 @@
     <Compile Include="Models\CambioFechaInicial.cs" />
     <Compile Include="Models\Respuesta.cs" />
     <Compile Include="Models\Usuario.cs" />
+    <Compile Include="PerfilUsuario.aspx.cs">
+      <DependentUpon>PerfilUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerfilUsuario.aspx.designer.cs">
+      <DependentUpon>PerfilUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Saldo.aspx.cs">
       <DependentUpon>Saldo.aspx</DependentUpon>

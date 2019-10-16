@@ -36,6 +36,7 @@ namespace Practica3_4
             {
                 Session["usuarioActual"] = usuarioExistente;
                 divError.Visible = false;
+                Response.Redirect("PerfilUsuario.aspx?parametro=" + nombreUsuario.Text);
                 Response.Redirect("Default.aspx", false);
             }
             else
