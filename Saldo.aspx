@@ -16,7 +16,7 @@
                         <asp:TextBox runat="server" ID="txtCuenta"></asp:TextBox>
                     </div>
                     <div class="form-group">
-                        <asp:Button ID="btnCuenta" runat="server" Text="Ingresar" />
+                        <asp:Button ID="btnCuenta" runat="server" Text="Ingresar" OnClick="ConsultarSaldo"/>
                     </div>
                     <div class="form-group">
                         <asp:label class="control-label" ID="lblmessage" runat="server" value=""></asp:label>
