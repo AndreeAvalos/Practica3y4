@@ -1,16 +1,30 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Saldo.aspx.cs" Inherits="Practica3_4.Saldo" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Saldo.aspx.cs" Inherits="Practica3_4.Saldo" Async="true"%>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-<!DOCTYPE html>
+<h1>Consulta de Saldo</h1>
+<hr>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
+<div class="row tex">
+    <div class="grid-container">
+        <div class="Crear Usuario">
+            <div class="log">
+                <form asp-action="Create">
+                    <div class="form-group">
+                        <label class="control-label">Ingrese su No. Cuenta</label>
+                    </div>
+                    <div class="form-group">
+                        <asp:TextBox runat="server" ID="txtCuenta"></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <asp:Button ID="btnCuenta" runat="server" Text="Ingresar" />
+                    </div>
+                    <div class="form-group">
+                        <asp:label class="control-label" ID="lblmessage" runat="server" value=""></asp:label>
+                    </div>
+                </form>
+            </div>
         </div>
-    </form>
-</body>
-</html>
+    </div>
+</div>
+
+</asp:Content>
