@@ -87,72 +87,121 @@ namespace Tests {
                     }
                 }
             }
-        }
+            public void TestRegistrarUsuario () {
 
-        [Test]
-        public void testCambioDia () {
-            CambioDia fechareal = new CambioDia ("", -7.0);
-            if (string.IsNullOrEmpty (fechareal.Dia)) {
-                Assert.Pass ();
-            }
-            if (double.IsNegative (fechareal.Cambio)) {
-                Assert.Pass ();
-            }
+                String Nombre = "Fernando";
+                String Apellido = "Paz";
+                Int64 dpi = 2679783400101;
 
-            CambioDia fechafake = new CambioDia ("19/03/1996", 7.0);
-            if (string.IsNullOrEmpty (fechafake.Dia)) {
-                Assert.Fail ();
-            }
-            if (double.IsNegative (fechafake.Cambio)) {
-                Assert.Fail ();
-            }
+                String mail = "fernandopaz@gmail.com";
+                String Pass = "1223";
 
-            CambioDia pordia = new CambioDia (DateTime.Today.ToString ("dd/MM/yy"), 7.7);
-            try {
-                pordia = Practica3_4.TipoCambioService.InvokeServiceCambioDia ();
-                if (pordia.Dia.Equals (DateTime.Today.ToString ("dd/MM/yyyy"))) {
-                    Assert.Pass ();
-                } else {
+                String cui = dpi.ToString ();
+                int tamanoDPI = cui.Length;
+
+                String Cuenta = "002";
+                int CuentaInt = Int32.Parse (Cuenta);
+
+                double saldo = 250.25;
+
+                bool resultCuenta;
+
+                resultCuenta = Cuenta.All (Char.IsDigit);
+
+                if (string.IsNullOrEmpty (Nombre)) {
                     Assert.Fail ();
                 }
-            } catch (Exception) {
-                Assert.Fail ();
+                if (string.IsNullOrEmpty (Apellido)) {
+                    Assert.Fail ();
+                }
+                if (string.IsNullOrEmpty (mail)) {
+                    Assert.Fail ();
+                }
+                if (string.IsNullOrEmpty (Pass)) {
+                    Assert.Fail ();
+                }
+                if (tamanoDPI < 0 && tamanoDPI > 14) {
+                    Assert.Fail ();
+                }
+                if (resultCuenta == false) {
+                    Assert.Fail ();
+                }
+
+                bool Esperado;
+                Esperado = Practica3_4.Registrousuarios.CrearUsuario (Nombre, Apellido, dpi, CuentaInt, saldo, mail, Pass);
+
+                if (Esperado == true) {
+
+                    Assert.Pass ();
+
+                }
+
+            }
+
+            [Test]
+            public void testCambioDia () {
+                CambioDia fechareal = new CambioDia ("", -7.0);
+                if (string.IsNullOrEmpty (fechareal.Dia)) {
+                    Assert.Pass ();
+                }
+                if (double.IsNegative (fechareal.Cambio)) {
+                    Assert.Pass ();
+                }
+
+                CambioDia fechafake = new CambioDia ("19/03/1996", 7.0);
+                if (string.IsNullOrEmpty (fechafake.Dia)) {
+                    Assert.Fail ();
+                }
+                if (double.IsNegative (fechafake.Cambio)) {
+                    Assert.Fail ();
+                }
+
+                CambioDia pordia = new CambioDia (DateTime.Today.ToString ("dd/MM/yy"), 7.7);
+                try {
+                    pordia = Practica3_4.TipoCambioService.InvokeServiceCambioDia ();
+                    if (pordia.Dia.Equals (DateTime.Today.ToString ("dd/MM/yyyy"))) {
+                        Assert.Pass ();
+                    } else {
+                        Assert.Fail ();
+                    }
+                } catch (Exception) {
+                    Assert.Fail ();
+                }
+
+            }
+
+            [Test]
+            public void testCambioFecha () {
+
+                CambioFechaInicial fechas1;
+                try {
+                    fechas1 = Practica3_4.TipoCambioService.InvokeServiceCambioFecha (DateTime.Today.ToString ("dd/MM/yyyy"));
+                    if (fechas1.totalitems == 2) {
+                        Assert.Pass ();
+                    } else {
+                        Assert.Fail ();
+                    }
+                } catch (Exception) {
+
+                }
+                CambioFechaInicial fechas2;
+                try {
+                    fechas2 = Practica3_4.TipoCambioService.InvokeServiceCambioFecha ("19/03/2020");
+                    if (fechas2.totalitems == 0) {
+                        Assert.Pass ();
+                    } else {
+                        Assert.Fail ();
+                    }
+                } catch (Exception) { }
+                CambioFechaInicial fechas3;
+                try {
+                    fechas3 = Practica3_4.TipoCambioService.InvokeServiceCambioFecha ("0");
+                    Assert.Fail ();
+                } catch (Exception) {
+                    Assert.Pass ();
+                }
+
             }
 
         }
-
-        [Test]
-        public void testCambioFecha () {
-
-            CambioFechaInicial fechas1;
-            try {
-                fechas1 = Practica3_4.TipoCambioService.InvokeServiceCambioFecha (DateTime.Today.ToString ("dd/MM/yyyy"));
-                if (fechas1.totalitems == 2) {
-                    Assert.Pass ();
-                } else {
-                    Assert.Fail ();
-                }
-            } catch (Exception) {
-
-            }
-            CambioFechaInicial fechas2;
-            try {
-                fechas2 = Practica3_4.TipoCambioService.InvokeServiceCambioFecha ("19/03/2020");
-                if (fechas2.totalitems == 0) {
-                    Assert.Pass ();
-                } else {
-                    Assert.Fail ();
-                }
-            } catch (Exception) { }
-            CambioFechaInicial fechas3;
-            try {
-                fechas3 = Practica3_4.TipoCambioService.InvokeServiceCambioFecha ("0");
-                Assert.Fail ();
-            } catch (Exception) {
-                Assert.Pass ();
-            }
-
-        }
-
     }
-}
