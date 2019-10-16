@@ -107,6 +107,36 @@ namespace Tests
                 }
             }
         }
+
+        [Test]
+        public void TestPerfilUsuario()
+        {
+            string usuario = "alexanderpavelv32@gmail.com";
+            if (usuario == null || usuario.Equals(""))
+            {
+                Assert.Fail();
+            }
+
+            string path = AppDomain.CurrentDomain.BaseDirectory + @"\database\usuarios.json";
+            using (StreamReader jsonStream = File.OpenText(path))
+            {
+                var json = jsonStream.ReadToEnd();
+                var usuario1 = JsonConvert.DeserializeObject<Usuario[]>(json);
+                foreach (var datos in usuario1)
+                {
+                    if (usuario.Equals(datos.Correo.ToString()))
+                    {
+                        Assert.Pass();
+                    }
+                    else
+                    {
+                        Assert.Fail();
+                    }
+                }
+            }
+        }
+
+
         [Test]
         public void TestRegistrarUsuario()
         {
