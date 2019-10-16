@@ -91,6 +91,9 @@ namespace Tests
             int tamanoDPI = cui.Length;
 
             String Cuenta = "002";
+            int CuentaInt = Int32.Parse(Cuenta);
+
+            double saldo = 250.25;
 
 
             bool resultCuenta;
@@ -101,25 +104,34 @@ namespace Tests
             {
                 Assert.Fail();
             }
-            else if (string.IsNullOrEmpty(Apellido))
+            if (string.IsNullOrEmpty(Apellido))
             {
                 Assert.Fail();
             }
-            else if (string.IsNullOrEmpty(mail))
+            if (string.IsNullOrEmpty(mail))
             {
                 Assert.Fail();
             }
-            else if (string.IsNullOrEmpty(Pass))
+            if (string.IsNullOrEmpty(Pass))
             {
                 Assert.Fail();
             }
-            else if (tamanoDPI < 0 && tamanoDPI > 14 )
+            if (tamanoDPI < 0 && tamanoDPI > 14 )
             {
                 Assert.Fail();
             }
-            else if (resultCuenta == false)
+            if (resultCuenta == false)
             {
                 Assert.Fail();
+            }
+
+            bool Esperado;
+            Esperado = Practica3_4.Registrousuarios.CrearUsuario(Nombre,Apellido,dpi,CuentaInt,saldo,mail,Pass);
+
+            if (Esperado == true) {
+
+                Assert.Pass();
+
             }
 
 
