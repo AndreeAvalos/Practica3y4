@@ -77,7 +77,7 @@ namespace Tests
 
 
         [Test]
-        public void testTransferencia() {
+        public void TestRegistrarUsuario() {
 
             String Nombre = "Fernando";
             String Apellido = "Paz";
