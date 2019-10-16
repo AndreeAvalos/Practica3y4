@@ -77,15 +77,63 @@ namespace Tests
 
 
         [Test]
-        public void testTransferencia() {
+        public void TestRegistrarUsuario() {
 
             String Nombre = "Fernando";
             String Apellido = "Paz";
             Int64 dpi =2679783400101;
-            int Cuenta = 002;
-            double saldo = 100.0;
+
             String mail = "fernandopaz@gmail.com";
             String Pass = "1223";
+
+
+            String cui = dpi.ToString();
+            int tamanoDPI = cui.Length;
+
+            String Cuenta = "002";
+            int CuentaInt = Int32.Parse(Cuenta);
+
+            double saldo = 250.25;
+
+
+            bool resultCuenta;
+            
+            resultCuenta = Cuenta.All(Char.IsDigit);
+
+            if (string.IsNullOrEmpty(Nombre))
+            {
+                Assert.Fail();
+            }
+            if (string.IsNullOrEmpty(Apellido))
+            {
+                Assert.Fail();
+            }
+            if (string.IsNullOrEmpty(mail))
+            {
+                Assert.Fail();
+            }
+            if (string.IsNullOrEmpty(Pass))
+            {
+                Assert.Fail();
+            }
+            if (tamanoDPI < 0 && tamanoDPI > 14 )
+            {
+                Assert.Fail();
+            }
+            if (resultCuenta == false)
+            {
+                Assert.Fail();
+            }
+
+            bool Esperado;
+            Esperado = Practica3_4.Registrousuarios.CrearUsuario(Nombre,Apellido,dpi,CuentaInt,saldo,mail,Pass);
+
+            if (Esperado == true) {
+
+                Assert.Pass();
+
+            }
+
 
         }
 

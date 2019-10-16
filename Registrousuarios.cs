@@ -17,7 +17,8 @@ namespace Practica3_4
     public class Registrousuarios
     {
 
-        public static string CrearUsuario(String Nombres, String Apellidos, Int64 Dpi, int noCuenta, double SaldoIncial, String Mail , String Password) {
+        public static bool CrearUsuario(String Nombres, String Apellidos, Int64 Dpi, int noCuenta, double SaldoIncial, String Mail , String Password) {
+
 
 
             Usuario _data = new Usuario();
@@ -33,7 +34,34 @@ namespace Practica3_4
             string json = JsonConvert.SerializeObject(cargarData.users);
             System.IO.File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + @"\database\usuarios.json", json);
 
-            return json;
+            return true;
+
+            //string path = AppDomain.CurrentDomain.BaseDirectory + @"\database\usuarios.json";
+
+            //if (File.Exists(path))
+            //{
+
+            //    Usuario _data = new Usuario();
+
+            //    _data.Nombre = Nombres;
+            //    _data.Apellido = Apellidos;
+            //    _data.Dpi = Dpi;
+            //    _data.Cuenta = noCuenta;
+            //    _data.Saldo = SaldoIncial;
+            //    _data.Correo = Mail;
+            //    _data.Password = Password;
+            //    cargarData.users.Add(_data);
+            //    string json = JsonConvert.SerializeObject(cargarData.users);
+            //    System.IO.File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + @"\database\usuarios.json", json);
+
+            //    return true;
+
+            //}
+            //else {
+
+            //    return false;
+
+            //}
 
 
         }
