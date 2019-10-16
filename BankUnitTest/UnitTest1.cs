@@ -1,6 +1,9 @@
+using Newtonsoft.Json;
 using NUnit.Framework;
 using Practica3_4.Helpers;
 using Practica3_4.Models;
+using System;
+using System.IO;
 
 namespace Tests
 {
@@ -60,6 +63,41 @@ namespace Tests
             else Assert.Fail();
             if (test5_respuesta.Estado == true) Assert.Pass();
             else Assert.Fail();
+        }
+
+        [Test]
+        public void TestConsultaSaldo()
+        {
+            string cuenta = "206000000";
+            int num1;
+            if (string.IsNullOrEmpty(cuenta))
+            {
+                Assert.Fail();
+            }
+            
+            bool res = int.TryParse(cuenta, out num1);
+            if (res == false)
+            {
+                // String is not a number.
+                Assert.Fail();
+            }
+            string path = AppDomain.CurrentDomain.BaseDirectory + @"\database\usuarios.json";
+            using (StreamReader jsonStream = File.OpenText(path))
+            {
+                var json = jsonStream.ReadToEnd();
+                var usuario1 = JsonConvert.DeserializeObject<Usuario[]>(json);
+                foreach (var datos in usuario1)
+                {
+                    if (cuenta.Equals(datos.Cuenta.ToString()))
+                    {
+                        Assert.Pass();
+                    }
+                    else
+                    {
+                        Assert.Fail();
+                    }
+                }
+            }
         }
     }
 }

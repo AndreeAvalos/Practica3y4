@@ -16,10 +16,27 @@ namespace Practica3_4
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         public void ConsultarSaldo(object sender, EventArgs e) {
+
+            if (string.IsNullOrEmpty(txtCuenta.Text))
+            {
+                lblmessage.Text = "El campo esta vacio";
+                return;
+            }
+
+            string text1 = txtCuenta.Text;
+            int num1;
+            bool res = int.TryParse(text1, out num1);
+            if (res == false)
+            {
+                // String is not a number.
+                lblmessage.Text = "El campo solo admite numeros enteros";
+                return;
+            }
+
             String consulta = txtCuenta.Text;
             string path = AppDomain.CurrentDomain.BaseDirectory + @"\database\usuarios.json";
             using (StreamReader jsonStream = File.OpenText(path))
