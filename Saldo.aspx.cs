@@ -28,8 +28,8 @@ namespace Practica3_4
             }
 
             string text1 = txtCuenta.Text;
-            int num1;
-            bool res = int.TryParse(text1, out num1);
+            int num;
+            bool res = int.TryParse(text1, out num);
             if (res == false)
             {
                 // String is not a number.
