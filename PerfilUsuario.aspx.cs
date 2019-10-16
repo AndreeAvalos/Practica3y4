@@ -15,6 +15,10 @@ namespace Practica3_4
         protected void Page_Load(object sender, EventArgs e)
         {
             string usuario = Request.Params["parametro"];
+            if (usuario == null || usuario.Equals("")) {
+                Response.Redirect("Login.aspx");
+                return;
+            }
             string path = AppDomain.CurrentDomain.BaseDirectory + @"\database\usuarios.json";
             using (StreamReader jsonStream = File.OpenText(path))
             {
