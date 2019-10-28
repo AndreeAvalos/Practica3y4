@@ -1,12 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Practica3_4.Models;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Practica3_4
 {
@@ -15,7 +10,7 @@ namespace Practica3_4
         protected void Page_Load(object sender, EventArgs e)
         {
             string usuario = Request.Params["parametro"];
-            if (usuario == null || usuario.Equals("")) {
+            if (string.IsNullOrEmpty(usuario)) {
                 Response.Redirect("Login.aspx");
                 return;
             }

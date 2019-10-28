@@ -1,24 +1,22 @@
 ﻿using Practica3_4.Models;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Text;
-using System.Web;
 using System.Xml;
 using System.Xml.Linq;
-using System.Xml.Serialization;
 
 namespace Practica3_4
 {
-    public class TipoCambioService
+    public static class TipoCambioService
     {
 
         public static HttpWebRequest CreateSOAPWebRequestCambioDia()
         {
             //Making Web Request    
-            HttpWebRequest Req = (HttpWebRequest)WebRequest.Create(@"http://www.banguat.gob.gt/variables/ws/TipoCambio.asmx");
+            const string V = @"http://www.banguat.gob.gt/variables/ws/TipoCambio.asmx";
+            const string RequestUriString = V;
+            HttpWebRequest Req = (HttpWebRequest)WebRequest.Create(RequestUriString);
             //SOAPAction    
             Req.Headers.Add(@"SOAPAction:http://www.banguat.gob.gt/variables/ws/TipoCambioDia");
             //Content_type    
@@ -60,8 +58,6 @@ namespace Practica3_4
                     var ServiceResult = rd.ReadToEnd();
                     //writting stream result on console    
                     xml += ServiceResult;
-
-                    //Console.ReadLine();
                 }
             }
 
@@ -72,7 +68,7 @@ namespace Practica3_4
                 cambio = (string)y.Elements().Where(z => z.Name.LocalName == "referencia").FirstOrDefault()
             }).ToList();
 
-            VarDolar.ElementAt(0);
+    
 
             System.Diagnostics.Debug.WriteLine(xml);
             resultado = new CambioDia(VarDolar.ElementAt(0).fecha, Convert.ToDouble(VarDolar.ElementAt(0).cambio));
@@ -84,7 +80,9 @@ namespace Practica3_4
         public static HttpWebRequest CreateSOAPWebRequestCambioFecha()
         {
             //Making Web Request    
-            HttpWebRequest Req = (HttpWebRequest)WebRequest.Create(@"http://www.banguat.gob.gt/variables/ws/TipoCambio.asmx");
+            const string V = @"http://www.banguat.gob.gt/variables/ws/TipoCambio.asmx";
+            const string RequestUriString = V;
+            HttpWebRequest Req = (HttpWebRequest)WebRequest.Create(RequestUriString);
             //SOAPAction    
             Req.Headers.Add(@"SOAPAction:http://www.banguat.gob.gt/variables/ws/TipoCambioFechaInicial");
             //Content_type    
@@ -128,8 +126,6 @@ namespace Practica3_4
                     var ServiceResult = rd.ReadToEnd();
                     //writting stream result on console    
                     xml += ServiceResult;
-
-                    //Console.ReadLine();
                 }
             }
             System.Diagnostics.Debug.WriteLine(xml);

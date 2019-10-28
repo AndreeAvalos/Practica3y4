@@ -230,7 +230,7 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.cs">
+    <Compile Include="_Default.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -240,6 +240,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Helpers\cargarData.cs" />
     <Compile Include="Helpers\TransferenciaHelper.cs" />
     <Compile Include="Helpers\UsuariosHelpers.cs" />
@@ -326,6 +327,11 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\TipoCambio\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="packages\SonarAnalyzer.CSharp.8.0.0.9566\analyzers\Google.Protobuf.dll" />
+    <Analyzer Include="packages\SonarAnalyzer.CSharp.8.0.0.9566\analyzers\SonarAnalyzer.CSharp.dll" />
+    <Analyzer Include="packages\SonarAnalyzer.CSharp.8.0.0.9566\analyzers\SonarAnalyzer.dll" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

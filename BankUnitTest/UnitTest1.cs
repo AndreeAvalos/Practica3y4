@@ -1,13 +1,6 @@
 using System;
-using System;
-using System.Collections.Generic;
-using System.IO;
 using System.IO;
 using System.Linq;
-using System.Net;
-using System.Text;
-using System.Web;
-using Newtonsoft.Json;
 using Newtonsoft.Json;
 using NUnit.Framework;
 using Practica3_4.Helpers;
@@ -20,10 +13,11 @@ namespace Tests
         [SetUp]
         public void Setup()
         {
-            cargarData.cargar();
+            CargarData.cargar();
         }
 
         [Test]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Major Bug", "S2583:Conditionally executed blocks should be reachable", Justification = "<pendiente>")]
         public void TestLogin()
         {
             string usuario = "alexanderpavelv32@gmail.com";
@@ -35,6 +29,10 @@ namespace Tests
             else if (string.IsNullOrEmpty(pass))
             {
                 Assert.Fail();
+            }
+            else
+            {
+                // Method intentionally left empty.
             }
             Usuario u = UsuariosHelpers.existeUsuario(usuario, pass);
             if (u != null)
@@ -61,19 +59,20 @@ namespace Tests
             //prueba que deberia recibir un true de respuesta
             Respuesta test5_respuesta = TransferenciaHelper.set_Transferencia(ClienteRecibe, ClienteDa, saldoPasa, passCorrect);
 
-            if (test1_respuesta.Estado == false) Assert.Pass();
+            if (!test1_respuesta.Estado) Assert.Pass();
             else Assert.Fail();
-            if (test2_respuesta.Estado == false) Assert.Pass();
+            if (!test2_respuesta.Estado) Assert.Pass();
             else Assert.Fail();
-            if (test3_respuesta.Estado == false) Assert.Pass();
+            if (!test3_respuesta.Estado) Assert.Pass();
             else Assert.Fail();
-            if (test4_respuesta.Estado == false) Assert.Pass();
+            if (!test4_respuesta.Estado) Assert.Pass();
             else Assert.Fail();
-            if (test5_respuesta.Estado == true) Assert.Pass();
+            if (test5_respuesta.Estado) Assert.Pass();
             else Assert.Fail();
         }
 
         [Test]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Major Bug", "S2583:Conditionally executed blocks should be reachable", Justification = "<pendiente>")]
         public void TestConsultaSaldo()
         {
             string cuenta = "206000000";
@@ -84,7 +83,7 @@ namespace Tests
             }
 
             bool res = int.TryParse(cuenta, out num1);
-            if (res == false)
+            if (!res)
             {
                 // String is not a number.
                 Assert.Fail();
@@ -109,10 +108,11 @@ namespace Tests
         }
 
         [Test]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Major Bug", "S2583:Conditionally executed blocks should be reachable", Justification = "<pendiente>")]
         public void TestPerfilUsuario()
         {
             string usuario = "alexanderpavelv32@gmail.com";
-            if (usuario == null || usuario.Equals(""))
+            if (string.IsNullOrEmpty(usuario))
             {
                 Assert.Fail();
             }
@@ -138,6 +138,7 @@ namespace Tests
 
 
         [Test]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Major Bug", "S2583:Conditionally executed blocks should be reachable", Justification = "<pendiente>")]
         public void TestRegistrarUsuario()
         {
 
@@ -164,6 +165,10 @@ namespace Tests
             {
                 Assert.Fail();
             }
+            else
+            {
+                // Method intentionally left empty.
+            }
             if (string.IsNullOrEmpty(Apellido))
             {
                 Assert.Fail();
@@ -180,7 +185,7 @@ namespace Tests
             {
                 Assert.Fail();
             }
-            if (resultCuenta == false)
+            if (!resultCuenta)
             {
                 Assert.Fail();
             }
@@ -188,18 +193,16 @@ namespace Tests
             bool Esperado;
             Esperado = Practica3_4.Registrousuarios.CrearUsuario(Nombre, Apellido, dpi, CuentaInt, saldo, mail, Pass);
 
-            if (Esperado == true)
+            if (Esperado)
             {
-
                 Assert.Pass();
-
             }
 
         }
 
 
         [Test]
-        public void testCambioDia()
+        public void TestCambioDia()
         {
             CambioDia fechareal = new CambioDia("", -7.0);
             if (string.IsNullOrEmpty(fechareal.Dia))
@@ -221,10 +224,9 @@ namespace Tests
                 Assert.Fail();
             }
 
-            CambioDia pordia = new CambioDia(DateTime.Today.ToString("dd/MM/yy"), 7.7);
             try
             {
-                pordia = Practica3_4.TipoCambioService.InvokeServiceCambioDia();
+                CambioDia pordia = Practica3_4.TipoCambioService.InvokeServiceCambioDia();
                 if (pordia.Dia.Equals(DateTime.Today.ToString("dd/MM/yyyy")))
                 {
                     Assert.Pass();
@@ -242,9 +244,8 @@ namespace Tests
         }
 
         [Test]
-        public void testCambioFecha()
+        public void TestCambioFecha()
         {
-
             CambioFechaInicial fechas1;
             try
             {
@@ -260,7 +261,7 @@ namespace Tests
             }
             catch (Exception)
             {
-
+                Assert.Fail();
             }
             CambioFechaInicial fechas2;
             try
@@ -275,11 +276,13 @@ namespace Tests
                     Assert.Fail();
                 }
             }
-            catch (Exception) { }
+            catch (Exception) { Assert.Fail(); }
             CambioFechaInicial fechas3;
             try
             {
+#pragma warning disable S1854 // Dead stores should be removed
                 fechas3 = Practica3_4.TipoCambioService.InvokeServiceCambioFecha("0");
+#pragma warning restore S1854 // Dead stores should be removed
                 Assert.Fail();
             }
             catch (Exception)

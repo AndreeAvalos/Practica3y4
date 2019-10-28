@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="Content/bootstrap.css" />
     <link rel="stylesheet" href="Content/estilos.css" />
-    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet"/>
     <title>Login</title>
 </head>
 <body>
@@ -28,10 +28,10 @@
                     <br/>
                     <br/>
                     <asp:Button runat="server" OnClick="IniciarSesion" Text = "Iniciar Sesión" class="btn btn-primary"/>
-                    <asp:Button runat="server" OnClick="RegistrarUsuario" Text = "Registrar" class="btn btn-info"/>
+                    <asp:Button runat="server" Text = "Registrar" class="btn btn-info"/>
                 </center>
 
-                <div ID="divError" runat="server" class="alert alert-danger" role="alert">
+                <div id="divError" runat="server" class="alert alert-danger" role="alert">
                      
                 </div>
             </form>

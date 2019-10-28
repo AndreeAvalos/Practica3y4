@@ -17,8 +17,11 @@ namespace Practica3_4.TipoCambio {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="InfoVariable", Namespace="http://www.banguat.gob.gt/variables/ws/")]
     [System.SerializableAttribute()]
-    public partial class InfoVariable : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
+#pragma warning disable S3926 // Deserialization methods should be provided for "OptionalField" members
+    public partial class InfoVariable : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
+    {
+#pragma warning restore S3926 // Deserialization methods should be provided for "OptionalField" members
+
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
@@ -109,6 +112,7 @@ namespace Practica3_4.TipoCambio {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Variable", Namespace="http://www.banguat.gob.gt/variables/ws/")]
     [System.SerializableAttribute()]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Major Bug", "S3926:Deserialization methods should be provided for \"OptionalField\" members", Justification = "<pendiente>")]
     public partial class Variable : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -169,6 +173,7 @@ namespace Practica3_4.TipoCambio {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Var", Namespace="http://www.banguat.gob.gt/variables/ws/")]
     [System.SerializableAttribute()]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Major Bug", "S3926:Deserialization methods should be provided for \"OptionalField\" members", Justification = "<pendiente>")]
     public partial class Var : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -259,8 +264,11 @@ namespace Practica3_4.TipoCambio {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="VarDolar", Namespace="http://www.banguat.gob.gt/variables/ws/")]
     [System.SerializableAttribute()]
-    public partial class VarDolar : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
+#pragma warning disable S3926 // Deserialization methods should be provided for "OptionalField" members
+    public partial class VarDolar : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
+    {
+#pragma warning restore S3926 // Deserialization methods should be provided for "OptionalField" members
+
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
@@ -319,8 +327,11 @@ namespace Practica3_4.TipoCambio {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="DataVariable", Namespace="http://www.banguat.gob.gt/variables/ws/")]
     [System.SerializableAttribute()]
-    public partial class DataVariable : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
+#pragma warning disable S3926 // Deserialization methods should be provided for "OptionalField" members
+    public partial class DataVariable : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
+    {
+#pragma warning restore S3926 // Deserialization methods should be provided for "OptionalField" members
+
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
