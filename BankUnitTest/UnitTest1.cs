@@ -247,10 +247,8 @@ namespace Tests
         public void TestCambioFecha()
         {
             CambioFechaInicial fechas1;
-            try
-            {
                 fechas1 = Practica3_4.TipoCambioService.InvokeServiceCambioFecha(DateTime.Today.ToString("dd/MM/yyyy"));
-                if (fechas1.totalitems == 2)
+                if (fechas1.totalitems > 1)
                 {
                     Assert.Pass();
                 }
@@ -258,11 +256,6 @@ namespace Tests
                 {
                     Assert.Fail();
                 }
-            }
-            catch (Exception)
-            {
-                Assert.Fail();
-            }
             CambioFechaInicial fechas2;
             try
             {
