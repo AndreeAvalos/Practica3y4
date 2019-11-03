@@ -39,5 +39,8 @@ namespace Practica3_4
                 divError.Visible = true;
             }
         }
+        protected void Registrar(object sender, EventArgs e) {
+            Response.Redirect("RegistroUser.aspx");
+        }
     }
 }

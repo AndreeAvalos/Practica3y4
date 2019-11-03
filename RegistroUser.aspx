@@ -22,13 +22,13 @@
         <tr>
             <td>DPI</td>
             <td>
-                <asp:TextBox ID="tb_DPI" runat="server"></asp:TextBox>
+                <asp:TextBox ID="tb_DPI" TextMode="number" runat="server"></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td>No. de cuenta</td>
             <td>
-                <asp:TextBox ID="tb_NoCuenta" runat="server"></asp:TextBox>
+                <asp:TextBox ID="tb_NoCuenta" TextMode="number" runat="server"></asp:TextBox>
             </td>
         </tr>
 
@@ -36,14 +36,14 @@
         <tr>
             <td>Saldo Incial de la cuenta</td>
             <td>
-                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TextBox1" TextMode="number" step="0.01" runat="server"></asp:TextBox>
             </td>
         </tr>
                
         <tr>
             <td>Mail</td>
             <td>
-                <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TextBox2" TextMode="email" runat="server"></asp:TextBox>
             </td>
         </tr>
 
@@ -51,7 +51,7 @@
         <tr>
             <td>Password</td>
             <td>
-                <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TextBox3" TextMode="Password" runat="server"></asp:TextBox>
             </td>
         </tr>
 

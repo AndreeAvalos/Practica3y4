@@ -13,7 +13,7 @@
                         <label class="control-label">Ingrese su No. Cuenta</label>
                     </div>
                     <div class="form-group">
-                        <asp:TextBox runat="server" ID="txtCuenta"></asp:TextBox>
+                        <asp:TextBox runat="server" TextMode="number" ID="txtCuenta"></asp:TextBox>
                     </div>
                     <div class="form-group">
                         <asp:Button ID="btnCuenta" runat="server" Text="Ingresar" OnClick="ConsultarSaldo"/>

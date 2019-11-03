@@ -28,7 +28,7 @@
                     <br/>
                     <br/>
                     <asp:Button runat="server" OnClick="IniciarSesion" Text = "Iniciar Sesión" class="btn btn-primary"/>
-                    <asp:Button runat="server" Text = "Registrar" class="btn btn-info"/>
+                    <asp:Button runat="server"  OnClick="Registrar" Text = "Registrar" class="btn btn-info"/>
                 </center>
 
                 <div id="divError" runat="server" class="alert alert-danger" role="alert">
