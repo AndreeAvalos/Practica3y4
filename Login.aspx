@@ -27,7 +27,7 @@
                     <br/>
                     <br/>
                     <br/>
-                    <asp:Button runat="server" OnClick="IniciarSesion" Text = "Iniciar Sesión" class="btn btn-primary"/>
+                    <asp:Button runat="server" OnClick="IniciarSesion" Text = "Logearse" class="btn btn-primary"/>
                     <asp:Button runat="server"  OnClick="Registrar" Text = "Registrar" class="btn btn-info"/>
                 </center>
 

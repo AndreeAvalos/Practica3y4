@@ -76,13 +76,12 @@ namespace Tests
         public void TestConsultaSaldo()
         {
             string cuenta = "206000000";
-            int num1;
             if (string.IsNullOrEmpty(cuenta))
             {
                 Assert.Fail();
             }
 
-            bool res = int.TryParse(cuenta, out num1);
+            bool res = int.TryParse(cuenta, out int num1);
             if (!res)
             {
                 // String is not a number.
@@ -146,7 +145,7 @@ namespace Tests
             String Apellido = "Paz";
             Int64 dpi = 2679783400101;
 
-            String mail = "fernandopaz@gmail.com";
+            String mail = "@fernandopazgmail.com";
             String Pass = "1223";
 
             String cui = dpi.ToString();
