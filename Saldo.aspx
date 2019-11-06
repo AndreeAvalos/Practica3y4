@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Saldo.aspx.cs" Inherits="Practica3_4.Saldo" Async="true"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-<h1>Consulta de Saldo</h1>
+<h1>Consulta de Dinero</h1>
 <hr>
 
 <div class="row tex">
