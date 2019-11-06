@@ -4,7 +4,11 @@
     <table style="width: 62%;" class="nav-justified">
         <tr>
             <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td>
+                
+                
+        <h1><strong>TRANSFERENCIA CALIFICACION</strong></h1>
+            </td>
         </tr>
         <tr>
             <td style="width: 193px">

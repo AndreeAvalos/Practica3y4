@@ -52,7 +52,7 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/Saldo">Consultar Saldo</a></li>
-                        <li><a runat="server" href="~/Transferencia">Transferencia Monetaria</a></li>
+                        <li><a runat="server" href="~/Transferencia">Transferencia CALIFICACION</a></li>
                         <li><a runat="server" href="~/TipoDeCambio">Tipo de Cambio</a></li>
                     </ul>
                 </div>
