@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PerfilUsuario.aspx.cs" Inherits="Practica3_4.PerfilUsuario" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-<h1>Perfil de Usuario</h1>
+<h1>&nbsp;Cuenta de Usuario</h1>
 <hr>
 
 <div class="row tex">
